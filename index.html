@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Composure — Boutique CRM & Consulting Agency</title>
+  <meta name="description" content="Composure — boutique CRM & consulting. Lifecycle strategy, automation, creative direction, and fractional leadership." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#050316;
+      --bg:#0b0710;
+      --muted:#b8b8c3;
+      --gold:#D4AF37;
+      --nav-grad-from:#a67bff;
+      --nav-grad-to:#ff6fb1;
+      --max-width:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#050316 0%, #060511 80%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* TOP NAV (purple gradient like your screenshot) */
+    .topbar{
+      background:linear-gradient(90deg,var(--nav-grad-from),var(--nav-grad-to));
+      padding:10px 6%;
+      box-shadow:0 8px 30px rgba(6,4,15,0.6);
+    }
+    .nav{
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .logo {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo .mark{
+      width:36px;height:36px;border-radius:8px;
+      background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;
+      font-family:"Playfair Display",serif;color:#fff;font-weight:600;
+    }
+    .logo .name {font-weight:600;letter-spacing:0.02em}
+
+    .menu{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      font-weight:600;
+      color:#fff;
+    }
+    .menu a{color:inherit;text-decoration:none;padding:6px 8px;border-radius:6px;transition:all .12s}
+    .menu a:hover{background:rgba(0,0,0,0.08);transform:translateY(-2px)}
+
+    /* hero */
+    .hero-wrap{max-width:var(--max-width);margin:28px auto 0;padding:40px 6% 60px;display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+    @media (max-width:980px){.hero-wrap{grid-template-columns:1fr;padding:28px 6%}}
+    .hero-left{padding-right:8px}
+    .eyebrow{color:var(--muted);text-transform:uppercase;letter-spacing:0.16em;font-size:12px;margin-bottom:12px}
+    h1{font-family:"Playfair Display",serif;font-size:44px;line-height:1.02;margin:0 0 16px}
+    h1 .accent{color:var(--gold);font-style:italic}
+    p.lead{color:#d6d6d8;max-width:720px;font-size:16px;line-height:1.7}
+    .hero-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn {
+      display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;
+      letter-spacing:0.04em;font-size:13px;
+    }
+    .btn-primary{background:linear-gradient(90deg,var(--gold),#f6e7b0);color:#111}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);color:#fff;background:transparent}
+
+    /* hero-right card */
+    .hero-card{
+      border-radius:16px;padding:22px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .hero-card h3{font-family:"Playfair Display",serif;margin:0 0 6px}
+    .hero-card p{color:var(--muted);margin:0 0 12px}
+
+    /* marquee section */
+    .marquee-wrap{max-width:var(--max-width);margin:36px auto;padding:18px 6%}
+    .marquee-shell{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:999px;padding:12px 10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+    .marquee-track{display:flex;gap:48px;align-items:center;white-space:nowrap;will-change:transform;animation:marquee 40s linear infinite}
+    /* note: duration changed to 40s (slower) */
+    @keyframes marquee{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+    .client {
+      display:inline-flex;align-items:center;gap:12px;padding:6px 14px;border-radius:40px;background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.02)
+    }
+    .client img{height:36px;display:block;object-fit:contain;filter:grayscale(100%) contrast(0.95) brightness(1.2)}
+    .client span{font-weight:600;color:#e9e9e9;font-size:13px;display:none} /* hidden when logo present */
+
+    /* services quick */
+    .services-snap{max-width:var(--max-width);margin:56px auto;padding:0 6% 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:1100px){.services-snap{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:700px){.services-snap{grid-template-columns:1fr}}
+    .svc{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .svc h4{margin:0 0 8px;font-family:"Playfair Display",serif}
+    .svc p{color:var(--muted);line-height:1.6;font-size:14px}
+
+    /* footer */
+    footer{max-width:var(--max-width);margin:40px auto;padding:40px 6%;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px}
+    footer a{color:inherit;text-decoration:none}
+
+    /* small helpers */
+    .container{max-width:var(--max-width);margin:0 auto}
+    .hide-mobile{display:inline-block}
+    @media (max-width:640px){.hide-mobile{display:none}}
+  </style>
+</head>
+<body>
+
+  <!-- top nav -->
+  <div class="topbar">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="logo" aria-hidden="true">
+        <div class="mark" style="font-family:Playfair Display">C</div>
+        <div>
+          <div class="name">Composure</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.9);margin-top:2px">Boutique CRM & Consulting</div>
+        </div>
+      </div>
+
+      <div class="menu" role="menubar">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- hero -->
+  <header class="hero-wrap">
+    <div class="hero-left">
+      <div class="eyebrow">Luxury CRM & Consulting</div>
+      <h1>We create <span class="accent">thoughtful</span> customer journeys that scale revenue and preserve brand.</h1>
+      <p class="lead">Composure pairs enterprise-level CRM engineering with editorial creative to build email journeys, lifecycle systems and product-led growth that feels premium and converts consistently.</p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="contact.html">Work With Us</a>
+        <a class="btn btn-ghost" href="case-studies.html">See Case Studies</a>
+      </div>
+
+      <div style="margin-top:28px;color:var(--muted);font-size:13px">
+        <strong>Specialties:</strong> Salesforce Marketing Cloud · Klaviyo · Lifecycle design · E-commerce · Product launches
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-hidden="false">
+      <h3>Recent work highlights</h3>
+      <p>Projects for enterprise & growth brands — troubleshooting SFMC builds, launching retention programs, and building loyalty experiences that work.</p>
+      <ul style="margin-top:12px;color:var(--muted);padding-left:18px;line-height:1.6">
+        <li>SFMC migrations & automations</li>
+        <li>Lifecycle journey design</li>
+        <li>Fractional CRM leadership</li>
+      </ul>
+    </aside>
+  </header>
+
+  <!-- clients marquee -->
+  <section class="marquee-wrap">
+    <div class="marquee-shell" aria-label="Trusted clients">
+      <!-- track is duplicated in JS for perfect looping; first half here -->
+      <div class="marquee-track" id="marqueeTrack">
+        <!-- Use these logos: place files in a folder called "logos" next to your HTML files -->
+        <!-- Filenames (recommended): crains.png paccar.png toyota.png lexus.png united.png victorias_secret.png pink.png zillow.png meta.png pamperedchef.png -->
+        <!-- If a logo file is missing, the client name will be used as fallback (alt text visible). -->
+        <div class="client"><img src="logos/crains.png" alt="Crain's logo"><span>Crain's</span></div>
+        <div class="client"><img src="logos/paccar.png" alt="PACCAR logo"><span>PACCAR</span></div>
+        <div class="client"><img src="logos/toyota.png" alt="Toyota Financial Services logo"><span>Toyota Financial Services</span></div>
+        <div class="client"><img src="logos/lexus.png" alt="Lexus Financial Services logo"><span>Lexus Financial Services</span></div>
+        <div class="client"><img src="logos/united.png" alt="United Airlines logo"><span>United Airlines</span></div>
+        <div class="client"><img src="logos/victorias_secret.png" alt="Victoria's Secret logo"><span>Victoria's Secret</span></div>
+        <div class="client"><img src="logos/pink.png" alt="Victoria's Secret PINK logo"><span>PINK</span></div>
+        <div class="client"><img src="logos/zillow.png" alt="Zillow logo"><span>Zillow</span></div>
+        <div class="client"><img src="logos/meta.png" alt="Meta logo"><span>Meta</span></div>
+        <div class="client"><img src="logos/pamperedchef.png" alt="Pampered Chef logo"><span>Pampered Chef</span></div>
+
+        <!-- duplicate set for continuous loop -->
+        <div class="client"><img src="logos/crains.png" alt="Crain's logo"><span>Crain's</span></div>
+        <div class="client"><img src="logos/paccar.png" alt="PACCAR logo"><span>PACCAR</span></div>
+        <div class="client"><img src="logos/toyota.png" alt="Toyota Financial Services logo"><span>Toyota Financial Services</span></div>
+        <div class="client"><img src="logos/lexus.png" alt="Lexus Financial Services logo"><span>Lexus Financial Services</span></div>
+        <div class="client"><img src="logos/united.png" alt="United Airlines logo"><span>United Airlines</span></div>
+        <div class="client"><img src="logos/victorias_secret.png" alt="Victoria's Secret logo"><span>Victoria's Secret</span></div>
+        <div class="client"><img src="logos/pink.png" alt="Victoria's Secret PINK logo"><span>PINK</span></div>
+        <div class="client"><img src="logos/zillow.png" alt="Zillow logo"><span>Zillow</span></div>
+        <div class="client"><img src="logos/meta.png" alt="Meta logo"><span>Meta</span></div>
+        <div class="client"><img src="logos/pamperedchef.png" alt="Pampered Chef logo"><span>Pampered Chef</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services snapshot -->
+  <section>
+    <div class="container">
+      <h2 style="font-family:'Playfair Display',serif">Services</h2>
+      <div class="services-snap" role="list">
+        <div class="svc" role="listitem">
+          <h4>CRM & Lifecycle Design</h4>
+          <p>Segmentation, personalization, automated journeys and win-back programs that move ROAS and retention.</p>
+        </div>
+        <div class="svc" role="listitem">
+          <h4>Marketing Automation</h4>
+          <p>SFMC builds, journey QA, integrations, and cross-channel orchestration for enterprise environments.</p>
+        </div>
+        <div class="svc" role="listitem">
+          <h4>Creative + Messaging</h4>
+          <p>Brand-forward email, UX copy, campaign strategy, and creative direction informed by data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© <span id="year"></span> Composure — Boutique CRM & Consulting</div>
+    <div>Contact: <a href="mailto:ComposureConsulting@gmail.com">ComposureConsulting@gmail.com</a></div>
+  </footer>
+
+  <script>
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Improve marquee: pause on hover, ensure perfect looping by doubling track length if needed
+    (function() {
+      const track = document.getElementById('marqueeTrack');
+      track.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+      track.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
+
+      // Accessibility: if images fail to load, show the fallback text
+      const clients = Array.from(track.querySelectorAll('.client'));
+      clients.forEach(c => {
+        const img = c.querySelector('img');
+        const txt = c.querySelector('span');
+        if (img) {
+          img.onerror = () => { img.style.display='none'; txt.style.display='inline-block'; }
+          // if image loads but is broken, alt will still show for screen readers.
+        } else {
+          txt.style.display = 'inline-block';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
