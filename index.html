@@ -1,246 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Composure — A Boutique Consulting Agency</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --nav-from:#a67bff; --nav-to:#ff6fb1;
-    --bg:#050316; --muted:#b8b8c3; --gold:#D4AF37;
-    --maxW:1180px;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:linear-gradient(180deg,#24155d 0%, #050316 60%); color:#fff; -webkit-font-smoothing:antialiased;}
-  a{color:inherit;text-decoration:none}
-
-  /* top nav */
-  .topbar{background:linear-gradient(90deg,var(--nav-from),var(--nav-to));padding:10px 6%;box-shadow:0 8px 30px rgba(6,4,15,0.6)}
-  .nav{max-width:var(--maxW);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .logo{display:flex;gap:12px;align-items:center}
-  .mark{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:#fff;font-weight:600}
-  .menu{display:flex;gap:22px;align-items:center;font-weight:600}
-  .menu a{padding:6px 8px;border-radius:6px;transition:all .12s}
-  .menu a:hover{background:rgba(0,0,0,0.08);transform:translateY(-2px)}
-
-  /* page layout */
-  .shell{max-width:var(--maxW);margin:28px auto;padding:0 6%}
-  .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding-top:18px}
-  @media (max-width:1000px){.hero{grid-template-columns:1fr; padding-bottom:18px}}
-
-  /* Sign / mockup column */
-  .sign-card{
-    border-radius:18px;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:360px;
-    position:relative;
-  }
-  /* optional photo behind sign */
-  .sign-photo{
-    position:absolute;inset:0;border-radius:18px;background-size:cover;background-position:center;opacity:0.12;filter:brightness(0.35);
-  }
-
-  /* Inline SVG logo container */
-  .sign-svg{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px}
-  .logo-box{padding:14px 28px;border:4px solid rgba(212,175,55,0.98);border-radius:6px;display:inline-block}
-  .logo-text{font-family:'Playfair Display',serif;font-size:46px;letter-spacing:0.08em;color:var(--gold);font-weight:600;margin:0;text-align:center}
-  .subtag{font-family:'Playfair Display',serif;color:#f6e8c0;letter-spacing:0.18em;text-transform:uppercase;font-size:12px;margin-top:2px}
-
-  /* left column content */
-  .eyebrow{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:0.14em;margin-bottom:8px}
-  h1{font-family:'Playfair Display',serif;font-size:44px;line-height:1.02;margin:0 0 12px}
-  h1 .accent{color:var(--gold);font-style:italic}
-  p.lead{color:#d6d6d8;max-width:720px;font-size:16px;line-height:1.6}
-  .cta-row{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:700;background:linear-gradient(90deg,var(--gold),#f6e7b0);color:#111;border:none}
-  .ghost{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff}
-
-  /* marquee (slower) */
-  .marq-wrap{margin:40px 0}
-  .marq-shell{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:999px;padding:12px 10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
-  .track{display:flex;gap:48px;align-items:center;white-space:nowrap;will-change:transform;animation:marq 40s linear infinite}
-  @keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-  .client{display:inline-flex;align-items:center;gap:12px;padding:6px 14px;border-radius:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
-  .client img{height:36px;object-fit:contain;filter:grayscale(100%) contrast(0.95) brightness(1.2)}
-  .client span{display:none}
-
-  /* service snapshot */
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-  @media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:560px){.services{grid-template-columns:1fr}}
-  .svc{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-  .svc h4{margin:0 0 8px;font-family:'Playfair Display',serif}
-  .svc p{color:var(--muted);line-height:1.6}
-
-  /* gallery of slides (thumbnails) */
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:30px}
-  .thumb{background:#0b0b10;border-radius:10px;padding:8px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .12s}
-  .thumb img{max-width:100%;height:140px;object-fit:cover;border-radius:6px}
-  .thumb:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
-
-  footer{margin:48px 0;padding:22px 0;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;color:var(--muted)}
-  footer a{color:inherit}
-
-  /* lightbox */
-  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}
-  .lightbox img{max-width:1100px;max-height:80vh;border-radius:8px}
-  .lightbox.show{display:flex}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison JCL Consulting</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background for luxury feel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5rem;
+            color: gold;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
-
-<!-- nav -->
-<div class="topbar">
-  <div class="nav">
-    <div class="logo">
-      <div class="mark">C</div>
-      <div>
-        <div style="font-weight:700">Composure</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.95)">Boutique CRM & Consulting</div>
-      </div>
+    <div class="container">
+        <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Maison JCL Branding Image">
+        <h1>Maison JCL Consulting</h1>
+        <p>Luxury branding & consulting solutions</p>
     </div>
-    <div class="menu">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="industries.html">Industries</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-</div>
-
-<!-- page shell -->
-<div class="shell">
-
-  <!-- hero -->
-  <div class="hero">
-    <div>
-      <div class="eyebrow">Luxury CRM & Consulting</div>
-      <h1>We design <span class="accent">elevated</span> customer journeys that scale with clarity</h1>
-      <p class="lead">Composure pairs enterprise-grade CRM craftsmanship with editorial creative direction. We fix systems, write the rules, and build journeys that keep customers coming back.</p>
-      <div class="cta-row">
-        <a class="btn" href="contact.html">Work with us</a>
-        <a class="ghost" href="case-studies.html">See case studies</a>
-      </div>
-
-      <!-- services snapshot -->
-      <div class="services" aria-hidden="false">
-        <div class="svc"><h4>CRM Strategy</h4><p>Segmentation, lifecycle mapping, personalization frameworks.</p></div>
-        <div class="svc"><h4>Marketing Automation</h4><p>SFMC builds, data design, migrations and QA for enterprise systems.</p></div>
-        <div class="svc"><h4>Creative & Messaging</h4><p>Campaign storytelling, email direction, brand voice engineering.</p></div>
-      </div>
-    </div>
-
-    <!-- sign / mockup -->
-    <div class="sign-card" aria-hidden="false">
-      <!-- optional background photo: put your wall photo at assets/sign-photo.jpg -->
-      <div class="sign-photo" style="background-image:url('assets/sign-photo.jpg');"></div>
-
-      <div class="sign-svg">
-        <!-- box + COMPOSURE (SVG-styled with CSS fallback) -->
-        <div class="logo-box" role="img" aria-label="Composure logo">
-          <div class="logo-text">COMPOSURE</div>
-        </div>
-        <div class="subtag">A Boutique Consulting Agency</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- marquee clients -->
-  <section class="marq-wrap">
-    <div class="marq-shell" aria-label="Clients we have worked with">
-      <div class="track" id="track">
-        <!-- logos (place in logos/ folder) -->
-        <div class="client"><img src="logos/crains.png" alt="Crain's"></div>
-        <div class="client"><img src="logos/paccar.png" alt="PACCAR"></div>
-        <div class="client"><img src="logos/toyota.png" alt="Toyota"></div>
-        <div class="client"><img src="logos/lexus.png" alt="Lexus"></div>
-        <div class="client"><img src="logos/united.png" alt="United Airlines"></div>
-        <div class="client"><img src="logos/victorias_secret.png" alt="Victoria's Secret"></div>
-        <div class="client"><img src="logos/pink.png" alt="PINK"></div>
-        <div class="client"><img src="logos/zillow.png" alt="Zillow"></div>
-        <div class="client"><img src="logos/meta.png" alt="Meta"></div>
-        <div class="client"><img src="logos/pamperedchef.png" alt="Pampered Chef"></div>
-
-        <!-- duplicate for loop -->
-        <div class="client"><img src="logos/crains.png" alt="Crain's"></div>
-        <div class="client"><img src="logos/paccar.png" alt="PACCAR"></div>
-        <div class="client"><img src="logos/toyota.png" alt="Toyota"></div>
-        <div class="client"><img src="logos/lexus.png" alt="Lexus"></div>
-        <div class="client"><img src="logos/united.png" alt="United Airlines"></div>
-        <div class="client"><img src="logos/victorias_secret.png" alt="Victoria's Secret"></div>
-        <div class="client"><img src="logos/pink.png" alt="PINK"></div>
-        <div class="client"><img src="logos/zillow.png" alt="Zillow"></div>
-        <div class="client"><img src="logos/meta.png" alt="Meta"></div>
-        <div class="client"><img src="logos/pamperedchef.png" alt="Pampered Chef"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- slide gallery (use images you already created) -->
-  <section>
-    <h2 style="font-family:'Playfair Display',serif">Pricing, Packages & Quick Info</h2>
-    <p style="color:var(--muted)">Click any slide to expand. These are the visuals you already shared — pricing, small-business packages, and service bullets.</p>
-
-    <div class="gallery" id="gallery">
-      <div class="thumb" data-full="assets/slide-1.png"><img src="assets/slide-1.png" alt="slide 1"></div>
-      <div class="thumb" data-full="assets/slide-2.png"><img src="assets/slide-2.png" alt="slide 2"></div>
-      <div class="thumb" data-full="assets/slide-3.png"><img src="assets/slide-3.png" alt="slide 3"></div>
-      <div class="thumb" data-full="assets/slide-4.png"><img src="assets/slide-4.png" alt="slide 4"></div>
-      <div class="thumb" data-full="assets/slide-5.png"><img src="assets/slide-5.png" alt="slide 5"></div>
-      <div class="thumb" data-full="assets/slide-6.png"><img src="assets/slide-6.png" alt="slide 6"></div>
-    </div>
-  </section>
-
-  <footer>
-    <div>© <span id="year"></span> Composure — Boutique CRM & Consulting</div>
-    <div>Contact: <a href="mailto:ComposureConsulting@gmail.com">ComposureConsulting@gmail.com</a></div>
-  </footer>
-
-</div>
-
-<!-- lightbox for gallery -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <img id="lightboxImg" src="" alt="Expanded slide">
-</div>
-
-<script>
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // marquee pause on hover + accessible fallback
-  const track = document.getElementById('track');
-  track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
-  track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
-
-  // if any img fails, hide it and reveal text fallback (not used here but safe)
-  document.querySelectorAll('.client img').forEach(img=>{
-    img.onerror = ()=>{ img.style.display='none'; const span=document.createElement('span'); span.textContent=img.alt; span.style.color='var(--muted)'; img.parentNode.appendChild(span); }
-  });
-
-  // gallery lightbox
-  document.querySelectorAll('.thumb').forEach(t=>{
-    t.addEventListener('click', ()=> {
-      const src = t.dataset.full || t.querySelector('img').src;
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lightboxImg');
-      lbImg.src = src;
-      lb.classList.add('show');
-      lb.setAttribute('aria-hidden','false');
-    });
-  });
-  document.getElementById('lightbox').addEventListener('click', (e)=>{
-    if(e.target.id==='lightbox' || e.target.id==='lightboxImg') {
-      document.getElementById('lightbox').classList.remove('show');
-      document.getElementById('lightbox').setAttribute('aria-hidden','true');
-    }
-  });
-
-  // Small accessibility: stop marquee animation on reduced-motion
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    track.style.animation = 'none';
-  }
-</script>
 </body>
 </html>
