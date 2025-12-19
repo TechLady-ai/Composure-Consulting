@@ -4,249 +4,247 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Composed Consulting</title>
-
-<!-- Luxe Sans font -->
-<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-  body {
-    margin: 0;
-    font-family: 'Luxe Sans', sans-serif;
-    background: linear-gradient(135deg, #ffffff, #f2f2f2, #c9c9c9, #111111);
-    color: #111;
-    line-height: 1.6;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background: #111;
-  }
-
-  .logo img {
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-  }
-
-  nav {
-    display: flex;
-    gap: 2rem;
-  }
-
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 4rem;
-  }
-
-  .hero img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    filter: grayscale(100%);
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #111;
-  }
-
-  .hero-text p {
-    font-size: 1.1rem;
-    color: #333;
-  }
-
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .service-card {
-    background-color: rgba(255,255,255,0.9);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    color: #111;
-  }
-
-  .service-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .service-card h3 {
-    margin-top: 0;
-    color: #111;
-  }
-
-  .service-card p {
-    color: #333;
-  }
-
-  /* Client Marquee */
-  .clients {
-    background-color: #111;
-    color: #fff;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 1rem 0;
-    font-size: 1rem;
-  }
-
-  .clients span {
-    display: inline-block;
-    padding-right: 5rem;
-    animation: scroll 20s linear infinite;
-  }
-
-  @keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* Contact Form */
-  .contact-form {
-    background-color: rgba(17,17,17,0.95);
-    padding: 2rem;
-    border-radius: 10px;
-    color: #fff;
-    margin: 4rem auto;
-    max-width: 600px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  }
-
-  .contact-form h2 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  .contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    border: none;
-    font-size: 1rem;
-  }
-
-  .contact-form button {
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #f2c94c;
-    color: #111;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
-
-  .contact-form button:hover {
-    background-color: #d4ac2e;
-  }
-
-  .credibility {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #f2c94c;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: #ddd;
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      grid-template-columns: 1fr;
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #111;
+        background-color: #fff;
     }
-  }
+    a { text-decoration: none; color: inherit; }
+    .hero {
+        background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGNpdHklMjBza2lsaW5lfGVufDB8fHx8MTY5NzY2ODc5MA&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    .hero span {
+        font-variant: small-caps;
+        font-size: 1rem;
+        color: #d4af37;
+    }
+    .hero p {
+        font-size: 1.25rem;
+        margin: 1rem 0;
+    }
+    .hero button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background-color: #d4af37;
+        border: none;
+        color: #111;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    .section { padding: 5rem 2rem; max-width: 1200px; margin: auto; }
+    .section h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+    
+    .clients {
+        display: flex;
+        overflow-x: auto;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+    .clients img {
+        max-height: 60px;
+        object-fit: contain;
+    }
+
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .service-box {
+        flex: 1 1 45%;
+        background: #f8f8f8;
+        padding: 2rem;
+        border-radius: 8px;
+    }
+    .service-box h3 { margin-top: 0; color: #d4af37; }
+
+    .platforms {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+    .platforms div {
+        text-align: center;
+        flex: 1 1 20%;
+    }
+
+    .how-we-work {
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    .how-we-work div h3 { color: #d4af37; margin-bottom: 0.5rem; }
+
+    .contact {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: #111;
+        color: #fff;
+    }
+    .contact a {
+        color: #d4af37;
+        font-weight: bold;
+    }
+    .contact button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background-color: #d4af37;
+        border: none;
+        color: #111;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    @media(max-width:768px) {
+        .services { flex-direction: column; }
+        .service-box { flex: 1 1 100%; }
+        .how-we-work { flex-direction: column; }
+        .platforms { flex-direction: column; }
+    }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="https://i.imgur.com/hpKefR1.png" alt="Composed Consulting Logo">
-  </div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Composed Consulting</h1>
+    <span>A boutique consulting agency</span>
+    <p>Partners with regulated, data-driven organizations and enterprise brands to bring clarity, composure, and measurable growth.<br><em>Calm strategy. Precise execution. Durable results.</em></p>
+    <button>Work With Us</button>
+</section>
 
-<main>
-  <section class="hero">
-    <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Editorial Style Advertising">
-    <div class="hero-text">
-      <h1>Luxury Advertising & Brand Strategy</h1>
-      <p>We craft advertising strategies that speak for your brand. From editorial storytelling to data-driven campaigns, our boutique consulting firm helps you elevate your presence and achieve measurable results.</p>
+<!-- Clients Section -->
+<section class="section">
+    <h2>Trusted by enterprise and mid-market organizations</h2>
+    <div class="clients">
+        <img src="https://1000logos.net/wp-content/uploads/2021/06/Walgreens-logo.png" alt="Walgreens">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/BMO_Harris_Bank_logo.svg" alt="BMO Harris Bank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Wintrust_Bank_Logo.png" alt="Wintrust Bank">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Urban_Partnership_Bank_logo.png" alt="Urban Partnership Bank">
+        <img src="https://clevermortgage.com/logo.png" alt="Clever Mortgage">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Toyota_Financial_Services_logo.svg" alt="Toyota Financial Services">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Lexus_logo.svg" alt="Lexus Financial Services">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Cox_Business_logo.png" alt="Cox Business">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Cox_Residential_logo.png" alt="Cox Residential">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Paccar_logo.svg" alt="Paccar">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Stella_Artois_logo.svg" alt="Stella Artois">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/United_Airlines_Logo_2010.svg" alt="United Airlines">
+        <img src="https://1000logos.net/wp-content/uploads/2019/05/Victoria-Secret-Logo.png" alt="Victoria's Secret">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Meta_Platforms_Inc._logo.svg" alt="Meta">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Pampered_Chef_logo.png" alt="Pampered Chef">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Crains_Chicago_Business_logo.png" alt="Crain's">
     </div>
-  </section>
+</section>
 
-  <section id="services" class="services">
-    <div class="service-card">
-      <h3>Brand Strategy</h3>
-      <p>Align your messaging, visuals, and campaigns to position your brand as an industry leader.</p>
+<!-- Services Section -->
+<section class="section">
+    <h2>What We Do</h2>
+    <div class="services">
+        <div class="service-box">
+            <h3>CRM & Marketing Technology Strategy</h3>
+            <ul>
+                <li>Platform evaluation and roadmap development</li>
+                <li>Salesforce Marketing Cloud and enterprise CRM optimization</li>
+                <li>Data architecture, governance, and compliance-aware workflows</li>
+            </ul>
+        </div>
+        <div class="service-box">
+            <h3>Growth & Lifecycle Marketing</h3>
+            <ul>
+                <li>Customer journey design</li>
+                <li>Segmentation, personalization, and automation</li>
+                <li>Retention and loyalty strategy</li>
+            </ul>
+        </div>
+        <div class="service-box">
+            <h3>Consulting for Regulated Industries</h3>
+            <ul>
+                <li>Financial services and banking</li>
+                <li>Healthcare and healthcare-adjacent brands</li>
+                <li>Risk-aware marketing operations</li>
+            </ul>
+        </div>
+        <div class="service-box">
+            <h3>Advisory & Fractional Leadership</h3>
+            <ul>
+                <li>Interim CRM or MarTech leadership</li>
+                <li>Vendor management and implementation oversight</li>
+                <li>Executive-level strategy alignment</li>
+            </ul>
+        </div>
     </div>
-    <div class="service-card">
-      <h3>Advertising Campaigns</h3>
-      <p>Create high-impact, editorial-style campaigns that resonate and convert your target audience.</p>
-    </div>
-    <div class="service-card">
-      <h3>Creative Consulting</h3>
-      <p>Receive tailored guidance on creative direction, storytelling, and visual design for maximum brand impact.</p>
-    </div>
-  </section>
+</section>
 
-  <section class="contact-form" id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="text" name="company" placeholder="Company Name">
-      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="credibility">
-      Fast Turnaround &nbsp;|&nbsp; Skilled Hands &nbsp;|&nbsp; Dedicated Professionals
+<!-- Platforms Section -->
+<section class="section">
+    <h2>Platforms & Ecosystems</h2>
+    <div class="platforms">
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Salesforce.com_logo.svg" alt="Salesforce Marketing Cloud" width="60">
+            <p>Salesforce Marketing Cloud</p>
+        </div>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Salesforce.com_logo.svg" alt="Salesforce CRM" width="60">
+            <p>Salesforce CRM</p>
+        </div>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Customer_data_platform_icon.png" alt="Enterprise CDPs" width="60">
+            <p>Enterprise CDPs</p>
+        </div>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Marketing_automation_icon.png" alt="Marketing Automation" width="60">
+            <p>Marketing Automation & Analytics</p>
+        </div>
     </div>
-  </section>
-</main>
+</section>
 
-<div class="clients">
-  <span>Victoria's Secret &nbsp;&nbsp; Meta &nbsp;&nbsp; Uber &nbsp;&nbsp; Instacart &nbsp;&nbsp; DoorDash &nbsp;&nbsp; Crain’s &nbsp;&nbsp; Chicago Booth</span>
-</div>
+<!-- How We Work Section -->
+<section class="section">
+    <h2>How We Work</h2>
+    <div class="how-we-work">
+        <div>
+            <h3>Focused</h3>
+            <p>Targeted solutions</p>
+        </div>
+        <div>
+            <h3>Composed</h3>
+            <p>Calm & strategic</p>
+        </div>
+        <div>
+            <h3>Outcome-Driven</h3>
+            <p>Impact, not activity</p>
+        </div>
+    </div>
+</section>
 
-<footer>
-  &copy; 2025 Composed Consulting | <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
-</footer>
+<!-- Contact Section -->
+<section class="contact">
+    <h2>Work With Us</h2>
+    <p><a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a></p>
+    <p>Based in the U.S. | Remote-first engagements</p>
+    <button>Get in Touch</button>
+</section>
 
 </body>
 </html>
