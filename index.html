@@ -3,152 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composed Consulting | Boutique Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Composed Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #c5a059;
-            --dark-bg: #1a1a1a;
-            --text-light: #f4f4f4;
-            --section-padding: 60px 20px;
+            --gold-light: #e2c99d;
+            --gold-dark: #b18e54;
+            --bg-dark: #0a0a0a;
         }
 
         body {
             margin: 0;
+            background-color: var(--bg-dark);
+            color: #ffffff;
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        /* Hero Section */
+        /* 1. HERO SECTION WITH IMAGE & OVERLAY */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('city-skyline.jpg') no-repeat center center/cover;
+            position: relative;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            /* Replace with your Chicago skyline image */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('skyline-bg.jpg') no-repeat center center/cover;
+            padding: 0 20px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 0; font-weight: 400; }
-        .hero h1 span { color: var(--gold); }
-        .hero .subtitle { letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; }
-        .hero p { max-width: 600px; font-style: italic; opacity: 0.9; }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
 
-        .btn {
-            background-color: var(--gold);
-            color: black;
-            padding: 12px 30px;
+        .hero-title span {
+            color: var(--gold-light);
+            background: linear-gradient(to right, var(--gold-light), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .hero-desc {
+            max-width: 700px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .hero-motto {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        /* 2. GOLD BUTTON STYLE */
+        .btn-gold {
+            margin-top: 40px;
+            padding: 12px 35px;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: #000;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 20px;
-            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        /* Trust Bar */
-        .trust-bar {
-            background: white;
-            padding: 40px 20px;
+        /* 3. LOGO BAR (White background) */
+        .trust-section {
+            background: #fdfdfd;
+            color: #444;
+            padding: 50px 0;
             text-align: center;
-            color: #333;
+            border-bottom: 1px solid #ddd;
         }
+
+        .trust-section p { font-style: italic; font-size: 0.9rem; margin-bottom: 30px; }
+
         .logo-grid {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            filter: grayscale(100%);
-        }
-        .logo-grid img { height: 30px; opacity: 0.7; }
-
-        /* Services Section */
-        .services {
-            padding: var(--section-padding);
-            background: #222 url('forest-texture.jpg') no-repeat center/cover;
-            background-blend-mode: overlay;
-            text-align: center;
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            align-items: center;
+            flex-wrap: wrap;
             gap: 40px;
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        .service-item h3 { border-bottom: 1px solid var(--gold); padding-bottom: 10px; font-size: 1.2rem; }
-        .service-item ul { list-style: none; padding: 0; font-size: 0.9rem; opacity: 0.8; }
 
-        /* Values Section */
-        .values {
-            background: #eee;
+        .logo-grid img { height: 35px; filter: grayscale(100%); opacity: 0.8; }
+
+        /* 4. SERVICES SECTION (Dark Textured) */
+        .services {
+            padding: 100px 20px;
+            /* Using a dark wood/forest texture background */
+            background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url('dark-texture.jpg');
+            text-align: center;
+        }
+
+        .section-header {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            border-bottom: 1px solid var(--gold-dark);
+            display: inline-block;
+            padding: 0 40px 10px;
+            margin-bottom: 60px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 20px;
+            border-right: 1px solid rgba(181, 142, 84, 0.3);
+        }
+
+        .service-card:last-child { border-right: none; }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            height: 50px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+
+        .service-card ul li::before {
+            content: "•";
+            color: var(--gold-light);
+            margin-right: 8px;
+        }
+
+        /* 5. HOW WE WORK (Light Grey Cards) */
+        .how-we-work {
+            background: #f4f4f4;
             color: #333;
-            padding: var(--section-padding);
-            display: flex;
-            justify-content: space-around;
+            padding: 80px 20px;
             text-align: center;
         }
-        .value-box h4 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; margin-bottom: 5px; }
 
-        /* Footer */
-        .footer {
-            padding: var(--section-padding);
-            text-align: center;
-            border-top: 1px solid #333;
+        .work-grid {
+            display: flex;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 40px auto 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        .footer a { color: var(--text-light); text-decoration: none; display: block; margin: 10px 0; }
+
+        .work-step {
+            flex: 1;
+            padding: 40px;
+            border-right: 1px solid #eee;
+        }
+
+        .work-step h4 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            margin: 0 0 10px;
+        }
 
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="subtitle">A Boutique Consulting Agency</div>
-        <h1>Composed <span>Consulting</span></h1>
-        <p>Partners with regulated, data-driven organizations & enterprise brands to bring clarity, composure, and measurable growth.</p>
-        <p><em>Calm strategy. Precise execution. Durable results.</em></p>
-        <a href="#" class="btn">Work With Us</a>
-    </header>
+    <section class="hero">
+        <div class="hero-tagline">A Boutique Consulting Agency</div>
+        <h1 class="hero-title">Composed <span>Consulting</span></h1>
+        <p class="hero-desc">Partners with regulated, data-driven organizations & enterprise brands to bring clarity, composure, and measurable growth.</p>
+        <p class="hero-motto">Calm strategy. Precise execution. Durable results.</p>
+        <a href="#" class="btn-gold">Work With Us</a>
+    </section>
 
-    <section class="trust-bar">
-        <p><em>Trusted by enterprise and mid-market organizations</em></p>
+    <section class="trust-section">
+        <p>Trusted by enterprise and mid-market organizations</p>
         <div class="logo-grid">
-            <span>WALGREENS</span> <span>BMO</span> <span>UNITED</span> <span>TOYOTA</span>
+            <span>Walgreens</span> <span>BMO</span> <span>Harris Bank</span> <span>Toyota</span> <span>United</span>
         </div>
     </section>
 
     <section class="services">
-        <h2>What We Do</h2>
-        <div class="service-grid">
-            <div class="service-item">
-                <h3>CRM & Marketing Technology Strategy</h3>
+        <div class="section-header">What We Do</div>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>CRM & Marketing <br> Technology Strategy</h3>
                 <ul>
                     <li>Platform Optimization</li>
                     <li>Data Governance</li>
                 </ul>
             </div>
-            <div class="service-item">
-                <h3>Growth & Lifecycle Marketing</h3>
+            <div class="service-card">
+                <h3>Growth & Lifecycle <br> Marketing</h3>
                 <ul>
                     <li>Customer Journeys</li>
                     <li>Automation & Loyalty</li>
                 </ul>
             </div>
-            <div class="service-item">
-                <h3>Consulting for Regulated Industries</h3>
+            <div class="service-card">
+                <h3>Consulting for <br> Regulated Industries</h3>
                 <ul>
                     <li>Financial & Healthcare</li>
                     <li>Risk Management</li>
                 </ul>
             </div>
-            <div class="service-item">
-                <h3>Advisory & Fractional Leadership</h3>
+            <div class="service-card">
+                <h3>Advisory & <br> Fractional Leadership</h3>
                 <ul>
                     <li>Interim Leadership</li>
                     <li>Strategic Guidance</li>
@@ -157,27 +239,23 @@
         </div>
     </section>
 
-    <section class="values">
-        <div class="value-box">
-            <h4>Focused</h4>
-            <p>Targeted solutions</p>
-        </div>
-        <div class="value-box">
-            <h4>Composed</h4>
-            <p>Calm & strategic</p>
-        </div>
-        <div class="value-box">
-            <h4>Outcome-Driven</h4>
-            <p>Impact, not activity</p>
+    <section class="how-we-work">
+        <div class="section-header" style="color:#333">How We Work</div>
+        <div class="work-grid">
+            <div class="work-step">
+                <h4>Focused</h4>
+                <p>Targeted solutions</p>
+            </div>
+            <div class="work-step">
+                <h4>Composed</h4>
+                <p>Calm & strategic</p>
+            </div>
+            <div class="work-step">
+                <h4>Outcome-Driven</h4>
+                <p>Impact, not activity</p>
+            </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <h2>Work With Us</h2>
-        <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
-        <p>Based in the U.S. | Remote-first engagements</p>
-        <a href="#" class="btn">Get in Touch</a>
-    </footer>
 
 </body>
 </html>
