@@ -1,45 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison JCL Consulting</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000; /* Black background for luxury feel */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-        }
-        .container {
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        }
-        h1 {
-            margin-top: 20px;
-            font-size: 2.5rem;
-            color: gold;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #ccc;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison JCL Consulting</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fafafa;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #d4af37; /* gold accent */
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .editorial img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .editorial-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+
+    .editorial-text p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #555;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .editorial {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Maison JCL Branding Image">
-        <h1>Maison JCL Consulting</h1>
-        <p>Luxury branding & consulting solutions</p>
-    </div>
+  <header>
+    <h1>Maison JCL Consulting</h1>
+    <p>Luxury advertising & brand strategy that elevates your business</p>
+  </header>
+
+  <main>
+    <section class="editorial">
+      <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Maison JCL Advertising">
+      <div class="editorial-text">
+        <h2>Strategic Advertising With Impact</h2>
+        <p>At Maison JCL, we don’t just create ads—we craft narratives that position your brand as the authority in your space. From precision-targeted campaigns to high-impact visual storytelling, we deliver solutions that drive results and elevate your market presence. Partner with us to turn ideas into campaigns that resonate and perform.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Maison JCL Consulting | <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
+  </footer>
 </body>
 </html>
