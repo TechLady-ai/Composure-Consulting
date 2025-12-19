@@ -1,179 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Composed Consulting</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background-color: #fafafa;
-    color: #111;
-    line-height: 1.6;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison JCL Styled Page</title>
+    
+    <!-- Link to Luxe Sans font (Google Fonts or your hosted font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Luxe+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Gradient background */
+        body {
+            margin: 0;
+            font-family: 'Luxe Sans', sans-serif;
+            background: linear-gradient(135deg, #ffffff, #000000); /* white to black gradient */
+            color: #000; /* default black text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
 
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #111;
-  }
+        /* Image styling */
+        .hero-image {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
 
-  /* Gold Chrome Logo Style */
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, #d4af37, #fffacd, #ffd700, #daa520);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 2px;
-  }
+        /* Text styling */
+        h1 {
+            color: #fff; /* white text over gradient */
+            font-weight: 700;
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
 
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 2rem;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 4rem;
-  }
-
-  .hero img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #111;
-  }
-
-  .hero-text p {
-    font-size: 1.1rem;
-    color: #333;
-  }
-
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .service-card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .service-card h3 {
-    margin-top: 0;
-    color: #111;
-  }
-
-  .service-card p {
-    color: #555;
-  }
-
-  /* Client Marquee */
-  .clients {
-    background-color: #111;
-    color: #fff;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 1rem 0;
-    font-size: 1rem;
-  }
-
-  .clients span {
-    display: inline-block;
-    padding-right: 5rem;
-    animation: scroll 20s linear infinite;
-  }
-
-  @keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: #555;
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+        p {
+            color: #000; /* black text over gradient */
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Composed Consulting</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <img src="your-image.jpg" alt="Maison JCL Visual" class="hero-image">
 
-<main>
-  <section class="hero">
-    <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Editorial Style Advertising">
-    <div class="hero-text">
-      <h1>Luxury Advertising & Brand Strategy</h1>
-      <p>We craft advertising strategies that speak for your brand. From editorial storytelling to data-driven campaigns, our boutique consulting firm helps you elevate your presence and achieve measurable results.</p>
-    </div>
-  </section>
-
-  <section id="services" class="services">
-    <div class="service-card">
-      <h3>Brand Strategy</h3>
-      <p>Align your messaging, visuals, and campaigns to position your brand as an industry leader.</p>
-    </div>
-    <div class="service-card">
-      <h3>Advertising Campaigns</h3>
-      <p>Create high-impact, editorial-style campaigns that resonate and convert your target audience.</p>
-    </div>
-    <div class="service-card">
-      <h3>Creative Consulting</h3>
-      <p>Receive tailored guidance on creative direction, storytelling, and visual design for maximum brand impact.</p>
-    </div>
-  </section>
-</main>
-
-<div class="clients">
-  <span>Victoria's Secret &nbsp;&nbsp; Meta &nbsp;&nbsp; Uber &nbsp;&nbsp; Instacart &nbsp;&nbsp; DoorDash &nbsp;&nbsp; Crain’s &nbsp;&nbsp; Chicago Booth</span>
-</div>
-
-<footer id="contact">
-  &copy; 2025 Composed Consulting | <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
-</footer>
+    <h1>Maison JCL</h1>
+    <p>Creative luxury. Bold statements. Unforgettable design.</p>
 
 </body>
 </html>
