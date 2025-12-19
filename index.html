@@ -5,36 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Composed Consulting</title>
 
-<!-- Luxe Sans font (replace with your own if hosted) -->
+<!-- Luxe Sans font -->
 <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
   body {
     margin: 0;
     font-family: 'Luxe Sans', sans-serif;
-    background: linear-gradient(135deg, #ffffff, #000000);
+    background: linear-gradient(135deg, #ffffff, #f2f2f2, #c9c9c9, #111111);
     color: #111;
     line-height: 1.6;
   }
 
   header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     background: #111;
   }
 
-  /* Logo image style */
   .logo img {
-    height: 60px;
+    height: 100px;
     object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
   }
 
   nav a {
     color: #fff;
     text-decoration: none;
-    margin-left: 2rem;
     font-weight: bold;
     font-size: 1rem;
   }
@@ -63,12 +67,12 @@
   .hero-text h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #111;
   }
 
   .hero-text p {
     font-size: 1.1rem;
-    color: #ddd;
+    color: #333;
   }
 
   .services {
@@ -78,12 +82,12 @@
   }
 
   .service-card {
-    background-color: rgba(255,255,255,0.05);
+    background-color: rgba(255,255,255,0.9);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
-    color: #fff;
+    color: #111;
   }
 
   .service-card:hover {
@@ -92,11 +96,11 @@
 
   .service-card h3 {
     margin-top: 0;
-    color: #fff;
+    color: #111;
   }
 
   .service-card p {
-    color: #ddd;
+    color: #333;
   }
 
   /* Client Marquee */
@@ -118,6 +122,57 @@
   @keyframes scroll {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
+  }
+
+  /* Contact Form */
+  .contact-form {
+    background-color: rgba(17,17,17,0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    color: #fff;
+    margin: 4rem auto;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .contact-form h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2c94c;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+
+  .contact-form button:hover {
+    background-color: #d4ac2e;
+  }
+
+  .credibility {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #f2c94c;
   }
 
   footer {
@@ -169,13 +224,27 @@
       <p>Receive tailored guidance on creative direction, storytelling, and visual design for maximum brand impact.</p>
     </div>
   </section>
+
+  <section class="contact-form" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="company" placeholder="Company Name">
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="credibility">
+      Fast Turnaround &nbsp;|&nbsp; Skilled Hands &nbsp;|&nbsp; Dedicated Professionals
+    </div>
+  </section>
 </main>
 
 <div class="clients">
   <span>Victoria's Secret &nbsp;&nbsp; Meta &nbsp;&nbsp; Uber &nbsp;&nbsp; Instacart &nbsp;&nbsp; DoorDash &nbsp;&nbsp; Crain’s &nbsp;&nbsp; Chicago Booth</span>
 </div>
 
-<footer id="contact">
+<footer>
   &copy; 2025 Composed Consulting | <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
 </footer>
 
