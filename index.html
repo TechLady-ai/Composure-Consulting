@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maison JCL Consulting</title>
+  <title>Composed Consulting</title>
   <style>
     body {
       margin: 0;
@@ -14,53 +14,81 @@
     }
 
     header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
       background-color: #111;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
       color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #d4af37; /* gold accent */
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #ccc;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: bold;
+      font-size: 1rem;
     }
 
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .editorial {
+    .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       align-items: center;
+      margin-bottom: 4rem;
     }
 
-    .editorial img {
+    .hero img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    .editorial-text h2 {
-      font-size: 2rem;
+    .hero-text h1 {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #111;
     }
 
-    .editorial-text p {
-      font-size: 1rem;
+    .hero-text p {
+      font-size: 1.1rem;
       color: #333;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      color: #111;
+    }
+
+    .service-card p {
+      color: #555;
     }
 
     footer {
@@ -72,7 +100,7 @@
     }
 
     @media (max-width: 768px) {
-      .editorial {
+      .hero {
         grid-template-columns: 1fr;
       }
     }
@@ -80,22 +108,40 @@
 </head>
 <body>
   <header>
-    <h1>Maison JCL Consulting</h1>
-    <p>Luxury advertising & brand strategy that elevates your business</p>
+    <img src="/mnt/data/f304f83f-f4c6-4623-9286-4fecf7829ad9.png" alt="Composed Consulting Logo">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="editorial">
-      <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Maison JCL Advertising">
-      <div class="editorial-text">
-        <h2>Strategic Advertising With Impact</h2>
-        <p>At Maison JCL, we don’t just create ads—we craft narratives that position your brand as the authority in your space. From precision-targeted campaigns to high-impact visual storytelling, we deliver solutions that drive results and elevate your market presence. Partner with us to turn ideas into campaigns that resonate and perform.</p>
+    <section class="hero">
+      <img src="https://i.imgur.com/V0rsvYd.jpeg" alt="Editorial Style Advertising">
+      <div class="hero-text">
+        <h1>Composed Consulting</h1>
+        <p>We craft advertising strategies that speak for your brand. From editorial storytelling to data-driven campaigns, our boutique consulting firm helps you elevate your presence and achieve measurable results.</p>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="service-card">
+        <h3>Brand Strategy</h3>
+        <p>Align your messaging, visuals, and campaigns to position your brand as an industry leader.</p>
+      </div>
+      <div class="service-card">
+        <h3>Advertising Campaigns</h3>
+        <p>Create high-impact, editorial-style campaigns that resonate and convert your target audience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Creative Consulting</h3>
+        <p>Receive tailored guidance on creative direction, storytelling, and visual design for maximum brand impact.</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Maison JCL Consulting | <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
+  <footer id="contact">
+    &copy; 2025 Composed Consulting | <a href="mailto:MaisonJCL@gmail.com">MaisonJCL@gmail.com</a>
   </footer>
 </body>
 </html>
